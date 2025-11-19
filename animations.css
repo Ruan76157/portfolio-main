@@ -1,0 +1,364 @@
+/* ==================== CURSOR PERSONALIZADO ==================== */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary, #00d4ff);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 212, 255, 0.2);
+    border-width: 3px;
+}
+
+/* ==================== ANIMAÇÕES DE FADE IN ==================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== ANIMAÇÃO DE DIGITAÇÃO ==================== */
+.typing-text {
+    position: relative;
+    display: inline-block;
+}
+
+.typing-text.typing-complete::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ==================== BOTÃO SCROLL TO TOP ==================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* ==================== NAV LINK ATIVO ==================== */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary, #00d4ff);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary, #00d4ff);
+}
+
+/* ==================== ANIMAÇÃO BOUNCE ==================== */
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+    }
+    50% { 
+        transform: translateY(-20px) scale(1.1); 
+    }
+}
+
+/* ==================== ANIMAÇÃO GLITCH ==================== */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* ==================== MENSAGEM DE STATUS ==================== */
+.status-message {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==================== INPUTS VÁLIDOS ==================== */
+.form-group input.valid,
+.form-group textarea.valid {
+    border-color: #28a745;
+}
+
+.form-group input.valid + label,
+.form-group textarea.valid + label {
+    color: #28a745;
+}
+
+/* ==================== LOADER (OPCIONAL) ==================== */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a192f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease;
+}
+
+.loader::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 5px solid #112240;
+    border-top-color: #00d4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== PARTÍCULAS ==================== */
+.particle {
+    transition: transform 0.3s ease;
+}
+
+.particle:hover {
+    transform: scale(2) !important;
+}
+
+/* ==================== ANIMAÇÃO DE TECH ICONS ==================== */
+.tech-icon {
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+/* ==================== PROJETO CARD HOVER ==================== */
+.projeto-card {
+    transition: all 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ==================== STAT CARD HOVER ==================== */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ==================== SKILL CATEGORY HOVER ==================== */
+.skill-category {
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .typing-text.typing-complete::after {
+        right: -5px;
+    }
+}
+
+/* ==================== ACESSIBILIDADE ==================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .custom-cursor {
+        display: none;
+    }
+}
+
+/* ==================== FOCUS VISIBLE ==================== */
+*:focus-visible {
+    outline: 2px solid var(--primary, #00d4ff);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary, #00d4ff);
+    outline-offset: 3px;
+}
+
+/* ==================== SELEÇÃO DE TEXTO ==================== */
+::selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: #fff;
+}
+
+/* ==================== SCROLLBAR PERSONALIZADA ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ==================== ANIMAÇÃO DE ENTRADA SUAVE ==================== */
+.hero {
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* ==================== EFEITO DE GLASSMORPHISM (OPCIONAL) ==================== */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==================== MOBILE MENU OVERLAY ==================== */
+@media (max-width: 768px) {
+    .nav-menu.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
