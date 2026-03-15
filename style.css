@@ -168,6 +168,12 @@ textarea:focus-visible {
     display: flex; align-items: center; justify-content: center;
     z-index: 9999;
     transition: opacity 0.5s var(--ease-out);
+    /* Fallback CSS: some sozinho após 4s caso o JS falhe ou demore */
+    animation: loader-timeout 0.01s linear 4s forwards;
+}
+
+@keyframes loader-timeout {
+    to { opacity: 0; pointer-events: none; visibility: hidden; }
 }
 
 .loader-inner {
@@ -1455,7 +1461,7 @@ section + section::before {
     .tech-icon { width: 54px; height: 54px; font-size: 1.4rem; }
 }
 
-/* ==================== MODO IMPRESSÃO =================== */
+/* ==================== MODO IMPRESSÃO ==================== */
 @media print {
     .navbar, .hamburger, .scroll-indicator,
     .particles, .btn, .footer-social,
