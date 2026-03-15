@@ -161,36 +161,6 @@ textarea:focus-visible {
 }
 .skip-to-main:focus { top: var(--s4); }
 
-/* ==================== LOADER ==================== */
-.loader {
-    position: fixed; inset: 0;
-    background: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s var(--ease-out);
-    /* Fallback CSS: some sozinho após 4s caso o JS falhe ou demore */
-    animation: loader-timeout 0.01s linear 4s forwards;
-}
-
-@keyframes loader-timeout {
-    to { opacity: 0; pointer-events: none; visibility: hidden; }
-}
-
-.loader-inner {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: var(--cream);
-    display: flex; gap: 0.1em; align-items: center;
-}
-
-.loader-inner .logo-bracket { color: var(--gold); }
-.loader-inner .loader-slash {
-    color: var(--gold);
-    animation: blink 0.8s infinite;
-}
-
 /* ==================== PARTÍCULAS ==================== */
 .particles {
     position: fixed; inset: 0;

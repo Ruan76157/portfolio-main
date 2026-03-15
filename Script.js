@@ -449,50 +449,19 @@ const initTechIcons = () => {
 };
 
 // ==================== LOADING INICIAL ====================
-const hideLoader = () => {
-    const loader = document.querySelector('.loader');
-    if (!loader || loader.dataset.hidden) return;
-    loader.dataset.hidden = 'true';
-    loader.style.transition = 'opacity 0.5s ease';
-    loader.style.opacity = '0';
-    setTimeout(() => {
-        loader.style.display = 'none';
-    }, 520);
-};
-
 const initPageLoad = () => {
-    // Esconde o loader imediatamente quando chamado
-    hideLoader();
-
     const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.opacity = '0';
-        hero.style.transform = 'translateY(20px)';
-        hero.style.transition = 'opacity 1s ease, transform 1s ease';
+    if (!hero) return;
+    hero.style.opacity = '0';
+    hero.style.transform = 'translateY(20px)';
+    hero.style.transition = 'opacity 1s ease, transform 1s ease';
+    requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                hero.style.opacity = '1';
-                hero.style.transform = 'translateY(0)';
-            });
+            hero.style.opacity = '1';
+            hero.style.transform = 'translateY(0)';
         });
-    }
+    });
 };
-
-// Segurança máxima: garante que o loader some em qualquer situação
-(() => {
-    // 1. Quando o DOM estiver pronto
-    if (document.readyState !== 'loading') {
-        hideLoader();
-    } else {
-        document.addEventListener('DOMContentLoaded', hideLoader);
-    }
-
-    // 2. Quando a página carregar completamente
-    window.addEventListener('load', hideLoader);
-
-    // 3. Fallback absoluto: após 3 segundos, some de qualquer jeito
-    setTimeout(hideLoader, 3000);
-})();
 
 // ==================== SEÇÃO ATIVA NA NAVEGAÇÃO ====================
 const initActiveSection = () => {
