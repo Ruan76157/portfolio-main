@@ -341,7 +341,7 @@ textarea:focus-visible {
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: var(--s3);
-    animation: fadeUp 0.6s var(--ease-out) both;
+    opacity: 1; transform: none;
 }
 
 .hero-label::before,
@@ -362,7 +362,7 @@ textarea:focus-visible {
     letter-spacing: -0.02em;
     color: var(--cream);
     margin-bottom: var(--s3);
-    animation: fadeUp 0.7s var(--ease-out) 0.1s both;
+    opacity: 1; transform: none;
 }
 
 .highlight {
@@ -389,7 +389,7 @@ textarea:focus-visible {
     color: var(--muted);
     margin-bottom: var(--s3);
     min-height: 1.5em;
-    animation: fadeUp 0.8s var(--ease-out) 0.2s both;
+    opacity: 1; transform: none;
 }
 
 .typing-text::after {
@@ -410,19 +410,19 @@ textarea:focus-visible {
     line-height: 1.8;
     max-width: 480px;
     margin-bottom: var(--s4);
-    animation: fadeUp 0.9s var(--ease-out) 0.3s both;
+    opacity: 1; transform: none;
 }
 
 .hero-buttons {
     display: flex; gap: var(--s3); flex-wrap: wrap;
-    animation: fadeUp 1s var(--ease-out) 0.4s both;
+    opacity: 1; transform: none;
 }
 
 /* Redes no hero */
 .hero-social {
     display: flex; gap: var(--s2); align-items: center;
     margin-top: var(--s4);
-    animation: fadeUp 1.1s var(--ease-out) 0.5s both;
+    opacity: 1; transform: none;
 }
 
 .hero-social::before {
@@ -452,7 +452,7 @@ textarea:focus-visible {
 /* ==================== PROFILE CARD ==================== */
 .hero-image {
     display: flex; justify-content: center;
-    animation: fadeUp 1s var(--ease-out) 0.6s both;
+    opacity: 1; transform: none;
 }
 
 .profile-card {
@@ -793,8 +793,10 @@ section + section::before {
     height: 100%;
     background: linear-gradient(90deg, var(--gold), var(--gold-light));
     border-radius: var(--r-full);
+    /* Transição definida no CSS para garantir que funcione independente do JS */
+    width: 0%;
     transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-    width: 0;
+    will-change: width;
 }
 
 /* Tech icons */
@@ -816,7 +818,7 @@ section + section::before {
     cursor: pointer;
     transition: color var(--t), border-color var(--t), transform var(--t-slow), background var(--t);
     position: relative; overflow: hidden;
-    animation: fadeUp 0.5s var(--ease-out) both;
+    opacity: 1; transform: none;
 }
 
 .tech-icon::before {
@@ -1351,16 +1353,31 @@ section + section::before {
     50%       { transform: scale(1.15); }
 }
 
-/* Fade in ativado via JS */
-.fade-in {
+/* ==================== SISTEMA FADE-IN (JS + CSS) ==================== */
+/*
+   Elementos recebem .will-fade via JS.
+   Quando entram no viewport, o JS adiciona .is-visible.
+   O CSS só define as transições — não esconde nada por padrão,
+   garantindo que o conteúdo seja sempre visível mesmo se o JS falhar.
+*/
+.will-fade {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
-.fade-in-visible {
-    opacity: 1;
-    transform: translateY(0);
+.will-fade.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Fallback: se JS não rodar em 2s, mostra tudo */
+@keyframes show-fallback {
+    to { opacity: 1; transform: none; }
+}
+
+.will-fade {
+    animation: show-fallback 0.01s linear 2.5s forwards;
 }
 
 /* ==================== RESPONSIVO ==================== */
