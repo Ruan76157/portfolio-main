@@ -3,470 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Ruan Lima Ramos - Desenvolvedor Full Stack especializado em Java, JavaScript, AWS e MongoDB">
-    <meta name="keywords" content="desenvolvedor, full stack, java, javascript, aws, portfólio">
+
+    <!-- SEO melhorado -->
+    <meta name="description" content="Portfólio de Ruan Lima Ramos — Desenvolvedor Full Stack especializado em Java, JavaScript, AWS e MongoDB. Estudante SENAC Brasília.">
+    <meta name="keywords" content="desenvolvedor full stack, java, javascript, aws, mongodb, portfólio, brasília, senac">
+    <meta name="author" content="Ruan Lima Ramos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (compartilhamento em redes sociais) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ruan Lima Ramos | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Desenvolvedor Full Stack especializado em Java, JavaScript, AWS e MongoDB.">
+    <meta property="og:url" content="https://ruan76157.github.io">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ruan Lima Ramos | Desenvolvedor Full Stack">
+    <meta name="twitter:description" content="Desenvolvedor Full Stack especializado em Java, JavaScript, AWS e MongoDB.">
+
+    <!-- Tema da barra de status no mobile -->
+    <meta name="theme-color" content="#0a0a0f">
+
     <title>Ruan Lima Ramos | Desenvolvedor Full Stack</title>
+
+    <!-- Favicon inline SVG (não precisa de arquivo externo) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- Pré-carrega Font Awesome para evitar FOUT -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Partículas de fundo -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+
+<!-- ==================== LOADER ==================== -->
+<div class="loader" aria-hidden="true">
+    <div class="loader-inner">
+        <span class="logo-bracket">&lt;</span>
+        <span class="loader-slash">/</span>
+        <span class="logo-bracket">&gt;</span>
+    </div>
+</div>
+
+<!-- ==================== PARTÍCULAS ==================== -->
+<div class="particles" aria-hidden="true">
+    <!-- 10 partículas geradas inline para evitar JS desnecessário -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<!-- ==================== NAVEGAÇÃO ==================== -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-container">
+        <a href="#home" class="logo" aria-label="Início">
+            <span class="logo-bracket" aria-hidden="true">&lt;</span>
+            <span class="logo-text">Dev</span>
+            <span class="logo-bracket" aria-hidden="true">/&gt;</span>
+        </a>
+
+        <!-- id adicionado para o aria-controls do hamburger -->
+        <ul class="nav-menu" id="nav-menu" role="menubar">
+            <li role="none"><a href="#home"     class="nav-link" role="menuitem">Início</a></li>
+            <li role="none"><a href="#sobre"    class="nav-link" role="menuitem">Sobre</a></li>
+            <li role="none"><a href="#skills"   class="nav-link" role="menuitem">Skills</a></li>
+            <li role="none"><a href="#projetos" class="nav-link" role="menuitem">Projetos</a></li>
+            <li role="none"><a href="#contato"  class="nav-link" role="menuitem">Contato</a></li>
+        </ul>
+
+        <!-- Botão semântico com aria correto -->
+        <button
+                class="hamburger"
+                aria-label="Abrir menu de navegação"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+                type="button"
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <!-- Corrigido: data-text deve ter o mesmo texto do elemento -->
+            <h1 class="glitch" data-text="Olá, eu sou Ruan Lima Ramos">
+                Olá, eu sou <span class="highlight">Ruan Lima Ramos</span>
+            </h1>
+
+            <!-- aria-live para anunciar texto digitado a leitores de tela -->
+            <h2 class="typing-text" aria-live="polite" aria-label="Desenvolvedor Full Stack"></h2>
+
+            <p class="hero-description">
+                Estudante de <strong>Tecnologia em Desenvolvimento de Sistemas</strong> no SENAC.
+                Apaixonado por criar soluções inovadoras e experiências digitais incríveis.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn btn-primary">
+                    <span>Ver Projetos</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+                <a href="#contato" class="btn btn-secondary">
+                    <span>Entrar em Contato</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Links rápidos para redes sociais direto no hero -->
+            <div class="hero-social" aria-label="Redes sociais">
+                <a href="https://github.com/Ruan76157" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ruan Lima Ramos">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ruan Lima Ramos">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:Ruanlramos778@gmail.com" class="social-link" aria-label="Enviar e-mail para Ruan">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <div class="profile-img">
+                        <!-- Substituir por <img> real quando tiver foto -->
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!-- Badge de status -->
+                <div class="profile-badge">
+                    <span class="badge-dot"></span>
+                    Disponível para projetos
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Navegação -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">Dev</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <a href="#sobre" class="scroll-indicator" aria-label="Rolar para a seção Sobre">
+        <div class="mouse" aria-hidden="true"></div>
+        <span class="scroll-text">Rolar</span>
+    </a>
+</section>
 
-    <!-- Seção Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="glitch" data-text="Olá, eu sou">Olá, eu sou Ruan Lima Ramos</h1>
-                <h2 class="typing-text">Desenvolvedor Full Stack</h2>
-                <p class="hero-description">
-                    Estudante de Tecnologia em Desenvolvimento de Sistemas no SENAC.
-                    Apaixonado por criar soluções inovadoras e experiências digitais incríveis.
+<!-- ==================== SOBRE ==================== -->
+<section id="sobre" class="sobre">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number" aria-hidden="true">01.</span> Sobre Mim
+        </h2>
+        <div class="sobre-content">
+            <div class="sobre-text">
+                <p>
+                    Sou estudante do <strong>Terceiro ano do Ensino Médio</strong> e estou cursando
+                    <strong>Técnico em Desenvolvimento de Sistemas</strong> no SENAC.
+                    Minha jornada na programação começou com curiosidade e se transformou em paixão.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#projetos" class="btn btn-primary">
-                        <span>Ver Projetos</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contato" class="btn btn-secondary">
-                        <span>Entrar em Contato</span>
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <p>
+                    Como <strong>Desenvolvedor Full Stack</strong>, tenho experiência tanto no
+                    front-end quanto no back-end, criando aplicações completas e funcionais.
+                    Estou sempre em busca de novos desafios e oportunidades para aprender.
+                </p>
+                <p>
+                    Atualmente, estou focado em aprimorar minhas habilidades em desenvolvimento
+                    web moderno, cloud computing e arquitetura de software.
+                </p>
+                <!-- Botão de download de currículo -->
+                <a href="curriculo.pdf" class="btn btn-secondary btn-sm" download aria-label="Baixar currículo em PDF">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+
+            <div class="sobre-stats" role="list" aria-label="Estatísticas">
+                <div class="stat-card" role="listitem">
+                    <div class="stat-icon" aria-hidden="true">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="11" aria-label="11 tecnologias">0+</h3>
+                    <p class="stat-label">Tecnologias</p>
+                </div>
+                <div class="stat-card" role="listitem">
+                    <div class="stat-icon" aria-hidden="true">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="10" aria-label="10 projetos">0+</h3>
+                    <p class="stat-label">Projetos</p>
+                </div>
+                <div class="stat-card" role="listitem">
+                    <div class="stat-icon" aria-hidden="true">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="2" aria-label="2 anos de estudo">0+</h3>
+                    <p class="stat-label">Anos de Estudo</p>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-card">
-                    <div class="profile-img-container">
-                        <div class="profile-img">
-                            <i class="fas fa-user"></i>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SKILLS ==================== -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number" aria-hidden="true">02.</span> Habilidades Técnicas
+        </h2>
+
+        <div class="skills-container">
+            <!-- Front-end -->
+            <div class="skill-category">
+                <h3 class="category-title">
+                    <i class="fas fa-laptop-code" aria-hidden="true"></i> Front-end
+                </h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML5</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 95%">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">CSS3</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 90%">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript 85%">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back-end -->
+            <div class="skill-category">
+                <h3 class="category-title">
+                    <i class="fas fa-server" aria-hidden="true"></i> Back-end
+                </h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Java 88%">
+                            <div class="skill-progress" data-progress="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL 82%">
+                            <div class="skill-progress" data-progress="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="MongoDB 80%">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferramentas -->
+            <div class="skill-category">
+                <h3 class="category-title">
+                    <i class="fas fa-tools" aria-hidden="true"></i> Ferramentas
+                </h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="AWS 75%">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Postman</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Postman 95%">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Git 85%">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
-    </section>
 
-    <!-- Seção Sobre -->
-    <section id="sobre" class="sobre">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">01.</span> Sobre Mim
-            </h2>
-            <div class="sobre-content">
-                <div class="sobre-text">
-                    <p>
-                        Sou estudante do <strong>segundo ano do Ensino Médio</strong> e estou cursando 
-                        <strong>Técnico em Desenvolvimento de Sistemas</strong> no SENAC. 
-                        Minha jornada na programação começou com curiosidade e se transformou em paixão.
+        <!-- Ícones de tecnologia -->
+        <div class="tech-icons" role="list" aria-label="Tecnologias utilizadas">
+            <div class="tech-icon" title="HTML5" role="listitem" tabindex="0" aria-label="HTML5">
+                <i class="fab fa-html5" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="CSS3" role="listitem" tabindex="0" aria-label="CSS3">
+                <i class="fab fa-css3-alt" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="JavaScript" role="listitem" tabindex="0" aria-label="JavaScript">
+                <i class="fab fa-js" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="Java" role="listitem" tabindex="0" aria-label="Java">
+                <i class="fab fa-java" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="AWS" role="listitem" tabindex="0" aria-label="Amazon Web Services">
+                <i class="fab fa-aws" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="Git" role="listitem" tabindex="0" aria-label="Git">
+                <i class="fab fa-git-alt" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="Database" role="listitem" tabindex="0" aria-label="Banco de dados">
+                <i class="fas fa-database" aria-hidden="true"></i>
+            </div>
+            <div class="tech-icon" title="API REST" role="listitem" tabindex="0" aria-label="API REST">
+                <i class="fas fa-plug" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PROJETOS ==================== -->
+<section id="projetos" class="projetos">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number" aria-hidden="true">03.</span> Projetos em Destaque
+        </h2>
+
+        <div class="projetos-grid">
+
+            <article class="projeto-card">
+                <div class="projeto-image" aria-hidden="true">
+                    <div class="projeto-overlay">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title">Projeto Padaria Full Stack</h3>
+                    <p class="projeto-description">
+                        Plataforma de vendas completa com sistema de autenticação,
+                        carrinho de compras e integração de pagamento.
                     </p>
-                    <p>
-                        Como <strong>Desenvolvedor Full Stack</strong>, tenho experiência tanto no 
-                        front-end quanto no back-end, criando aplicações completas e funcionais. 
-                        Estou sempre em busca de novos desafios e oportunidades para aprender.
+                    <div class="projeto-tech" aria-label="Tecnologias utilizadas">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Ruan76157" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Projeto Padaria no GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                        <a href="#" class="projeto-link" aria-label="Ver demonstração do Projeto Padaria">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="projeto-card">
+                <div class="projeto-image" aria-hidden="true">
+                    <div class="projeto-overlay">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title">Sistema de Gerenciamento</h3>
+                    <p class="projeto-description">
+                        Aplicação para gerenciar tarefas e projetos com dashboard
+                        interativo e relatórios em tempo real.
                     </p>
-                    <p>
-                        Atualmente, estou focado em aprimorar minhas habilidades em desenvolvimento 
-                        web moderno, cloud computing e arquitetura de software.
+                    <div class="projeto-tech" aria-label="Tecnologias utilizadas">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Ruan76157" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Sistema de Gerenciamento no GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                        <a href="#" class="projeto-link" aria-label="Ver demonstração do Sistema de Gerenciamento">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="projeto-card">
+                <div class="projeto-image" aria-hidden="true">
+                    <div class="projeto-overlay">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title">API REST em Cloud</h3>
+                    <p class="projeto-description">
+                        API RESTful escalável hospedada na AWS com documentação
+                        completa e testes automatizados via Postman.
                     </p>
-                </div>
-                <div class="sobre-stats">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="stat-number" data-target="11">11</h3>
-                        <p class="stat-label">Tecnologias</p>
+                    <div class="projeto-tech" aria-label="Tecnologias utilizadas">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Postman</span>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h3 class="stat-number" data-target="10">10</h3>
-                        <p class="stat-label">Projetos</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="stat-number" data-target="2">2</h3>
-                        <p class="stat-label">Anos de Estudo</p>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Ruan76157" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Ver código da API REST no GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                        <a href="#" class="projeto-link" aria-label="Ver demonstração da API REST">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                        </a>
                     </div>
                 </div>
+            </article>
+
+        </div>
+
+        <!-- Botão para ver todos os projetos no GitHub -->
+        <div class="projetos-footer">
+            <a href="https://github.com/Ruan76157" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Ver todos os projetos no GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span>Ver mais no GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTATO ==================== -->
+<section id="contato" class="contato">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number" aria-hidden="true">04.</span> Entre em Contato
+        </h2>
+
+        <div class="contato-wrapper">
+            <div class="contato-info">
+                <h3>Vamos conversar?</h3>
+                <p>
+                    Estou sempre aberto a discutir novos projetos, ideias criativas
+                    ou oportunidades para fazer parte de suas visões.
+                </p>
+
+                <address class="contato-items">
+                    <div class="contato-item">
+                        <div class="contato-icon" aria-hidden="true">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contato-details">
+                            <h4>Email</h4>
+                            <!-- Corrigido: link clicável no email -->
+                            <a href="mailto:Ruanlramos778@gmail.com">Ruanlramos778@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <div class="contato-icon" aria-hidden="true">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contato-details">
+                            <h4>Localização</h4>
+                            <p>Brasília, DF — Brasil</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <div class="contato-icon" aria-hidden="true">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contato-details">
+                            <h4>GitHub</h4>
+                            <!-- Corrigido: link clicável no GitHub -->
+                            <a href="https://github.com/Ruan76157" target="_blank" rel="noopener noreferrer">
+                                github.com/Ruan76157
+                            </a>
+                        </div>
+                    </div>
+                </address>
+            </div>
+
+            <div class="contato-form-wrapper">
+                <form
+                        id="contactForm"
+                        action="https://formspree.io/f/movyolwg"
+                        method="POST"
+                        novalidate
+                        aria-label="Formulário de contato"
+                >
+                    <!-- honeypot anti-spam (campo oculto, bots preenchem, humanos não) -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="form-group">
+                        <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                required
+                                minlength="2"
+                                maxlength="100"
+                                autocomplete="name"
+                                aria-required="true"
+                        >
+                        <label for="nome">Nome</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                maxlength="150"
+                                autocomplete="email"
+                                aria-required="true"
+                        >
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                                type="text"
+                                id="assunto"
+                                name="assunto"
+                                required
+                                minlength="3"
+                                maxlength="150"
+                                aria-required="true"
+                        >
+                        <label for="assunto">Assunto</label>
+                    </div>
+
+                    <div class="form-group">
+                            <textarea
+                                    id="mensagem"
+                                    name="mensagem"
+                                    rows="5"
+                                    required
+                                    minlength="10"
+                                    maxlength="2000"
+                                    aria-required="true"
+                            ></textarea>
+                        <label for="mensagem">Mensagem</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span>Enviar Mensagem</span>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+                <!-- role="alert" é adicionado pelo JS quando há mensagem -->
+                <div id="statusMessage" class="status-message" aria-live="polite"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Seção Skills -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">02.</span> Habilidades Técnicas
-            </h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-laptop-code"></i> Front-end
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">HTML5</span>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">CSS3</span>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">JavaScript</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-server"></i> Back-end
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Java</span>
-                                <span class="skill-percentage">88%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">MySQL</span>
-                                <span class="skill-percentage">82%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="82"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">MongoDB</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-tools"></i> Ferramentas
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">AWS</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Postman</span>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Git</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-social" aria-label="Redes sociais">
+                <a href="https://github.com/Ruan76157" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <div class="tech-icons">
-                <div class="tech-icon" title="HTML5">
-                    <i class="fab fa-html5"></i>
-                </div>
-                <div class="tech-icon" title="CSS3">
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-                <div class="tech-icon" title="JavaScript">
-                    <i class="fab fa-js"></i>
-                </div>
-                <div class="tech-icon" title="Java">
-                    <i class="fab fa-java"></i>
-                </div>
-                <div class="tech-icon" title="AWS">
-                    <i class="fab fa-aws"></i>
-                </div>
-                <div class="tech-icon" title="Git">
-                    <i class="fab fa-git-alt"></i>
-                </div>
-                <div class="tech-icon" title="Database">
-                    <i class="fas fa-database"></i>
-                </div>
-                <div class="tech-icon" title="API">
-                    <i class="fas fa-plug"></i>
-                </div>
-            </div>
+            <!-- Ano dinâmico via JS inline para não depender de script externo -->
+            <p>
+                &copy; <span id="footer-year">2025</span> Ruan Lima Ramos.
+                Feito com <i class="fas fa-heart" aria-label="amor" style="color:#ff006e"></i>
+                e muito <i class="fas fa-coffee" aria-label="café"></i>
+            </p>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Seção Projetos -->
-    <section id="projetos" class="projetos">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">03.</span> Projetos em Destaque
-            </h2>
-            <div class="projetos-grid">
-                <div class="projeto-card">
-                    <div class="projeto-image">
-                        <div class="projeto-overlay">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                    </div>
-                    <div class="projeto-content">
-                        <h3 class="projeto-title">Projeto Padaria Full Stack</h3>
-                        <p class="projeto-description">
-                            Plataforma de Vendas completa com sistema de autenticação, 
-                            carrinho de compras e integração de pagamento.
-                        </p>
-                        <div class="projeto-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="projeto-links">
-                            <a href="#" class="projeto-link" aria-label="Ver código no GitHub">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="projeto-link" aria-label="Ver demonstração">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="projeto-card">
-                    <div class="projeto-image">
-                        <div class="projeto-overlay">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                    </div>
-                    <div class="projeto-content">
-                        <h3 class="projeto-title">Sistema de Gerenciamento</h3>
-                        <p class="projeto-description">
-                            Aplicação para gerenciar tarefas e projetos com dashboard 
-                            interativo e relatórios em tempo real.
-                        </p>
-                        <div class="projeto-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                        <div class="projeto-links">
-                            <a href="#" class="projeto-link" aria-label="Ver código no GitHub">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="projeto-link" aria-label="Ver demonstração">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="projeto-card">
-                    <div class="projeto-image">
-                        <div class="projeto-overlay">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                    </div>
-                    <div class="projeto-content">
-                        <h3 class="projeto-title">API REST em Cloud</h3>
-                        <p class="projeto-description">
-                            API RESTful escalável hospedada na AWS com documentação 
-                            completa e testes automatizados.
-                        </p>
-                        <div class="projeto-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Postman</span>
-                        </div>
-                        <div class="projeto-links">
-                            <a href="#" class="projeto-link" aria-label="Ver código no GitHub">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="projeto-link" aria-label="Ver demonstração">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Contato -->
-    <section id="contato" class="contato">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">04.</span> Entre em Contato
-            </h2>
-            <div class="contato-wrapper">
-                <div class="contato-info">
-                    <h3>Vamos conversar?</h3>
-                    <p>
-                        Estou sempre aberto a discutir novos projetos, ideias criativas 
-                        ou oportunidades para fazer parte de suas visões.
-                    </p>
-                    <div class="contato-items">
-                        <div class="contato-item">
-                            <div class="contato-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contato-details">
-                                <h4>Email</h4>
-                                <p>Ruanlramos778@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contato-item">
-                            <div class="contato-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contato-details">
-                                <h4>Localização</h4>
-                                <p>Brasília, DF - Brasil</p>
-                            </div>
-                        </div>
-                        <div class="contato-item">
-                            <div class="contato-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contato-details">
-                                <h4>GitHub</h4>
-                                <p>https://github.com/Ruan76157</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contato-form-wrapper">
-                    <form id="contactForm" action="https://formspree.io/f/movyolwg" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="nome" name="nome" required>
-                            <label for="nome">Nome</label>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Email</label>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" id="assunto" name="assunto" required>
-                            <label for="assunto">Assunto</label>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                            <label for="mensagem">Mensagem</label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <span>Enviar Mensagem</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                    
-                    <div id="statusMessage" class="status-message"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                <p>&copy; 2025 Ruan Lima Ramos. Feito com <i class="fas fa-heart"></i> e muito <i class="fas fa-coffee"></i></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script>
+    // Ano dinâmico no footer
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
 </body>
 </html>
