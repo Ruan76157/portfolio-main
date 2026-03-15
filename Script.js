@@ -620,7 +620,7 @@ const init = () => {
     // initProtection();
 };
 
-// Executa quando o DOM estiver pronto
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {

@@ -1455,7 +1455,7 @@ section + section::before {
     .tech-icon { width: 54px; height: 54px; font-size: 1.4rem; }
 }
 
-/* ==================== MODO IMPRESSÃO ==================== */
+/* ==================== MODO IMPRESSÃO =================== */
 @media print {
     .navbar, .hamburger, .scroll-indicator,
     .particles, .btn, .footer-social,
