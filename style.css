@@ -310,7 +310,23 @@ textarea:focus-visible {
     display: flex; align-items: center; justify-content: center;
     padding: calc(80px + var(--s6)) var(--s4) var(--s6);
     position: relative;
+    /* Hero sempre visível — animação é bônus */
+    opacity: 1;
 }
+
+/* Animação suave quando JS adiciona .hero-ready */
+.hero.hero-ready .hero-text > *,
+.hero.hero-ready .hero-image {
+    animation: fadeUp 0.7s ease both;
+}
+
+.hero.hero-ready .hero-text .hero-label   { animation-delay: 0s; }
+.hero.hero-ready .hero-text h1            { animation-delay: 0.1s; }
+.hero.hero-ready .hero-text .typing-text  { animation-delay: 0.15s; }
+.hero.hero-ready .hero-text .hero-description { animation-delay: 0.2s; }
+.hero.hero-ready .hero-text .hero-buttons { animation-delay: 0.25s; }
+.hero.hero-ready .hero-text .hero-social  { animation-delay: 0.3s; }
+.hero.hero-ready .hero-image              { animation-delay: 0.35s; }
 
 /* Linha decorativa lateral esquerda */
 .hero::before {
@@ -1353,31 +1369,15 @@ section + section::before {
     50%       { transform: scale(1.15); }
 }
 
-/* ==================== SISTEMA FADE-IN (JS + CSS) ==================== */
-/*
-   Elementos recebem .will-fade via JS.
-   Quando entram no viewport, o JS adiciona .is-visible.
-   O CSS só define as transições — não esconde nada por padrão,
-   garantindo que o conteúdo seja sempre visível mesmo se o JS falhar.
-*/
-.will-fade {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+/* Bounce para tech icons */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    40%       { transform: translateY(-12px); }
+    60%       { transform: translateY(-6px); }
 }
 
-.will-fade.is-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* Fallback: se JS não rodar em 2s, mostra tudo */
-@keyframes show-fallback {
-    to { opacity: 1; transform: none; }
-}
-
-.will-fade {
-    animation: show-fallback 0.01s linear 2.5s forwards;
+.tech-icon.bounce {
+    animation: bounce 0.5s ease;
 }
 
 /* ==================== RESPONSIVO ==================== */
